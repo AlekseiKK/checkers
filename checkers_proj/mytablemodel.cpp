@@ -108,12 +108,14 @@ void TableModel::show_places(const QVariant &index)
 {
 
     hide_places_for_moves();
+    beginResetModel();
     if (check_every_checker_for_attack() && should_attack(index.value<int>(), reverse_checker(current_player))){
         show_possible_moves(index);
     }
     else if (!check_every_checker_for_attack()){
         show_possible_moves(index);
     }
+    endResetModel();
 
 }
 
