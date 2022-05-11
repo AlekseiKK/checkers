@@ -158,15 +158,13 @@ Window {
                         ctx.fill();
                     }
                 }
-                TapHandler {
-                    onTapped: {
-                        boardmodel.move(index);}
-                }
-                TapHandler {
-                    acceptedButtons: Qt.RightButton
-                    onTapped: {
-                        boardmodel.show_places(index);}
-                }
+            TapHandler {
+                onTapped: {
+                    if (boardmodel.can_move(index)){boardmodel.move(index);}
+                    else{boardmodel.show_places(index);}
+                    }
+            }
+
         }
     }
     Rectangle {
