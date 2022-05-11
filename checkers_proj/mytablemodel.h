@@ -29,6 +29,7 @@ public:
     Q_INVOKABLE void setBoard(QString color_of_player); // установка состояния доски
     Q_INVOKABLE void move(const QVariant &index); // реализация перемещения шашки
     Q_INVOKABLE void show_places(const QVariant &index); // показать возможные ходы
+    Q_INVOKABLE bool can_move(const QVariant &index);
     bool game_over(); // проверка закончилась ли игра
     bool is_queen(int index); // проверка шашки на королеву
     void make_queen(int index); // превращение в королеву

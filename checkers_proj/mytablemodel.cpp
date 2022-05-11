@@ -14,6 +14,12 @@ QString TableModel::score_of_second()
     return second_player_score;
 }
 
+bool TableModel::can_move(const QVariant &index)
+{
+   if (m_board[index.value<int>()] == 3){return true;}
+   return false;
+}
+
 QString TableModel::score_of_first()
 
 {
